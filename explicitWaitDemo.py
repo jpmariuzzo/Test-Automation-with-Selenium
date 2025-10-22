@@ -24,20 +24,18 @@ driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
 time.sleep(2)## Necessary sleep timer to build the list, to not return a empty list
 
 referenceProducts = ["Cucumber - 1 Kg", "Raspberry - 1/4 Kg", "Strawberry - 1/4 Kg"]
-productNames = driver.find_elements(By.XPATH, "//h4[@class='product-name']")
-i=0
-for i in range(3):
-    assert productNames[i].text == referenceProducts[i]
-    print("Product ", referenceProducts[i], " selected!")
-
-
+productNames =[]
 
 products = driver.find_elements(By.XPATH, "//div[@class='products']/div")
-
 assert len(products) > 0
-
 for product in products:
+    productNames.append(product.find_element(By.XPATH, "h4").text)
     product.find_element(By.XPATH, "div/button").click()
+
+assert referenceProducts == productNames
+i=0
+for i in range(len(products)):
+    print("Product ", referenceProducts[i], " selected!")
 
 driver.find_element(By.CSS_SELECTOR, "img[alt='Cart']").click()
 driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
@@ -51,7 +49,7 @@ wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".promoInfo")))
 ## Explicit wait focus on specific elements that takes more time to load
 promoInfo = driver.find_element(By.CLASS_NAME, "promoInfo").text
-print(promoInfo)
+print("rahulshettyacademy", promoInfo)
 assert promoInfo == 'Code applied ..!'
 
 
