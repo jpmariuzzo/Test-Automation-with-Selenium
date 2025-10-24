@@ -5,7 +5,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.ie.service import Service
 
-service_obj = Service(r"C:\Users\I009111\PycharmProjects\pythonTesting\pythonSelenium\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+service_obj = Service(r"C:\Users\jpmar\PyCharmProjects\pythonTesting\pythonSelenium\chromedriver-win64\chromedriver.exe")
 driver = webdriver.Chrome(service=service_obj)
 
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
