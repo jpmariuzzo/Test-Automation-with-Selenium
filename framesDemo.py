@@ -52,4 +52,4 @@ assert driver.find_element(By.CSS_SELECTOR, "p").text == "Thanks for Contacting 
 
 driver.find_element(By.CSS_SELECTOR, ".btn.btn-default").click()
 
-time.sleep(5)
+time.sleep(3)
