@@ -4,13 +4,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 #Chosing the way your going to run your Chrome
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("headless") ##Headless mode doesn't show the webpage
-chrome_options.add_argument("--ignore-certificate-errors") ##The Chrome will ignore all certifications errors, like those from SSL
+chromeOptions = webdriver.ChromeOptions()
+chromeOptions.add_argument("headless") ##Headless mode doesn't show the webpage
+chromeOptions.add_argument("--ignore-certificate-errors") ##The Chrome will ignore all certifications errors, like those from SSL
 
 
 service_obj = Service(r"C:\Users\jpmar\PyCharmProjects\pythonTesting\pythonSelenium\chromedriver-win64\chromedriver.exe")
-driver = webdriver.Chrome(service=service_obj, options=chrome_options) ##Some arguments can be added here.
+driver = webdriver.Chrome(service=service_obj, options=chromeOptions) ##Some arguments can be added here.
 driver.implicitly_wait(2)
 
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
