@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+import openpyxl
 
 service_obj = Service(r"C:\Users\jpmar\PyCharmProjects\pythonTesting\pythonSelenium\chromedriver-win64\chromedriver.exe")
 
@@ -30,5 +31,10 @@ wait = WebDriverWait(driver, 10)
 toast_locator = (By.CSS_SELECTOR, ".Toastify__toast-body div:nth-child(2)") # . to select a class
 wait.until(expected_conditions.visibility_of_element_located(toast_locator))
 print(driver.find_element(*toast_locator).text) #We use * to unpack the tuple
+
+fruit_name = "Apple"
+priceColumn = driver.find_element(By.XPATH, "//div[text()='Price']").get_attribute("data-column-id") #Getting the Price Column number, generic way
+actual_price = driver.find_element(By.XPATH, f"//div[text()='{fruit_name}']/parent::div/parent::div/div[@id='cell-{priceColumn}-undefined']").text
+print(actual_price)
 
 time.sleep(3)
