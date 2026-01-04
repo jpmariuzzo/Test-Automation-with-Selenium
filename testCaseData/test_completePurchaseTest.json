@@ -1,0 +1,30 @@
+{
+  "data" : [
+    {
+      "useremail": "rahulshettyacademy",
+      "userpassword": "learning",
+      "productname": "Blackberry",
+      "deliverylocation": "France",
+      "countryinitials": "Fra"
+    },
+
+    {
+      "useremail": "rahulshettyacademy",
+      "userpassword": "learning",
+      "productname": "Samsung Note 8",
+      "deliverylocation": "Italy",
+      "countryinitials": "Ita"
+    },
+
+    {
+      "useremail": "rahulshettyacademy",
+      "userpassword": "learning",
+      "productname": "iphone X",
+      "deliverylocation": "Germany",
+      "countryinitials": "Ger"
+    }
+
+
+
+  ]
+}
